@@ -152,6 +152,12 @@ h1 {
   padding: 20px;
 }
 
+.services .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
 .services h2 {
   font-size: 22px;
   margin-bottom: 20px;
@@ -159,16 +165,24 @@ h1 {
 }
 
 .card {
-  background: #fff;
+  background: white;
   border-radius: 20px;
   padding: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card h3 {
   font-size: 18px;
   margin-bottom: 8px;
+}
+
+.card h3::before {
+  content: '🛠️ ';
+  font-size: 20px;
 }
 
 .card p {
@@ -181,15 +195,20 @@ h1 {
   font-size: 14px;
 }
 
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
 .card button {
-  margin-top: 10px;
-  width: 100%;
-  background: #eee;
+  margin-top: auto;
+  background: linear-gradient(90deg, #00C6FF, #0072FF);
+  color: white;
+  border: none;
   padding: 10px;
   border-radius: 14px;
   font-weight: bold;
-  border: none;
-  font-size: 15px;
+  cursor: pointer;
 }
 
 /* Кастомный блок */
